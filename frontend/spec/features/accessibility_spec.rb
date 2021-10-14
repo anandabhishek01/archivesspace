@@ -173,7 +173,6 @@ describe 'Accessibility', js: true, db: 'accessibility' do
 
     # 519100, #519357
     it "supports aria-expanded for event and merge dropdowns" do
-      pending
       visit "/resources/1"
       page.has_css? "div.record-toolbar"
 
@@ -227,7 +226,6 @@ describe 'Accessibility', js: true, db: 'accessibility' do
     # see https://www.w3.org/TR/wai-aria-1.1/#combobox
     # also see: https://github.com/archivesspace/archivesspace/commit/9bcb1a8884c2a9f8d4d82a67b114b016fa3d0c2c
     it "has role and aria attributes for the merge dropdown combobox" do
-      pending
       visit "/resources/1"
 
       find("#merge-dropdown button.merge-action").click
@@ -293,6 +291,7 @@ describe 'Accessibility', js: true, db: 'accessibility' do
       visit "/resources/1/edit"
 
       add_agent_button = find("section#resource_linked_agents_ button")
+      sleep 0.5
       add_agent_button.click
 
       within "section#resource_linked_agents_ div.subrecord-form-container" do
@@ -308,6 +307,7 @@ describe 'Accessibility', js: true, db: 'accessibility' do
       visit "/resources/1/edit"
 
       add_agent_button = find("section#resource_linked_agents_ button")
+      sleep 0.5
       add_agent_button.click
 
       within "section#resource_linked_agents_ div.subrecord-form-container" do
